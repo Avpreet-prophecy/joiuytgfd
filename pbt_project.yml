@@ -29,7 +29,7 @@ templates: {}
 jobs: {}
 gemContainer:
   languageVersion: 2.12.15
-  gemLibsVersion: 1.1.26
+  gemLibsVersion: 1.1.47
   gems:
     gems/Reformat:
       name: Reformat
