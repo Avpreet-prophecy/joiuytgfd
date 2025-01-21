@@ -1,0 +1,90 @@
+name: Avpreet_scala_project
+description: ''
+version: '1.0'
+author: abhisheks+e2etests@prophecy.io
+language: scala
+buildSystem: ''
+buildSystemDetails:
+  artefactID: avpreetscalaproject
+  parentArtefactID: abhishekse2etestsprophecyioteam
+  buildSystem: maven
+  author: null
+  createdAt: '2025-01-21 07:36:15'
+pipelines:
+  pipelines/my_pipeline:
+    name: my_pipeline
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: scala
+    createdAt: '2025-01-21 07:36:15'
+    datasets:
+      inputs: []
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: 2.12.15
+  gemLibsVersion: 1.1.26
+  gems:
+    gems/Reformat:
+      name: Reformat
+      category: Transform
+      subCategory: ''
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      mode: batch
+      files:
+      - src/main/scala/abhishekse2etestsprophecyioteam/avpreetscalaproject/gems/my_gem.scala
+      gemType: ComponentGem
+      dependencies: []
+      createdAt: '2025-01-21 07:38:10'
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-01-21 07:36:15'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros: {}
+sqlSeeds: {}
+sqlSources: {}
+sqlUnreferencedSources: {}
+sqlPipeline: null
+dependencies:
+- modifiedAt: '2025-01-21T07:36:15.549028Z'
+  name: plibMaven
+  version: 8.8.0-SNAPSHOT
+  id: '440469446'
+  createdAt: '2025-01-21T07:36:15.549028Z'
+  type: plibMaven
+projectDependencies:
+  '39':
+    projectUID: 39
+    projectName: ProphecySparkBasicsScala
+    repositoryPath: gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=
+    version: 0.2.6.1.dev2
+    isDefault: true
+    author: null
+    createdAt: '2025-01-21 07:35:46'
+  '40':
+    projectUID: 40
+    projectName: ProphecyWarehouseScala
+    repositoryPath: gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_40.git&subPath=
+    version: 0.0.6
+    isDefault: true
+    author: null
+    createdAt: '2025-01-21 07:35:46'
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
+pipelineConfigurations: {}
