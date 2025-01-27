@@ -24,7 +24,7 @@
       }
     },
     "language" : "scala",
-    "fabricId" : "9",
+    "fabricId" : "1",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -83,16 +83,28 @@
     "topLevelPackage" : "io.prophecy.pipelines.my_pipeline",
     "configurationVersion" : "v2"
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "3eDx-mKRdxsLhPS-8VItU$$YujyObNj-KLp9i4JTfe2S",
+    "source" : "IpbdagXRCbE5Fl2hu9Avy$$yLStlG07XT_W1INnQ56Xf",
+    "sourcePort" : "vDWKwShtNcYXP3uJtbBjX$$lAPxZdHj7R1XfnUKjXLR1",
+    "target" : "hp4GuMQQvGxBoy2cAIONE$$Dc_WgCSMbwBxQCH1jzeYH",
+    "targetPort" : "8-4jfoc7_w5Khf8f-iK-n$$hzLh9DaN8CVbEhJrywcDr"
+  }, {
+    "id" : "-tT8pmoWmdYeW17wYf9vQ",
+    "source" : "IpbdagXRCbE5Fl2hu9Avy$$yLStlG07XT_W1INnQ56Xf",
+    "sourcePort" : "vDWKwShtNcYXP3uJtbBjX$$lAPxZdHj7R1XfnUKjXLR1",
+    "target" : "jy3t7qLiLE0oGRcs6iAqK$$SvOcZkgHGnk-4EhWu0Luz",
+    "targetPort" : "6tLvIWgcrYX2WgpvGLZoN$$drG6TIlW519iMPqIFuUn8"
+  } ],
   "processes" : {
-    "ZQ0PoNsKRlCj0itPHE5l-$$ZlhtgCi0MSZ3wyqyQbQ6M" : {
-      "id" : "ZQ0PoNsKRlCj0itPHE5l-$$ZlhtgCi0MSZ3wyqyQbQ6M",
+    "IpbdagXRCbE5Fl2hu9Avy$$yLStlG07XT_W1INnQ56Xf" : {
+      "id" : "IpbdagXRCbE5Fl2hu9Avy$$yLStlG07XT_W1INnQ56Xf",
       "component" : "Source",
       "metadata" : {
-        "label" : "Source_0",
-        "slug" : "Source_0",
-        "x" : -680,
-        "y" : -420,
+        "label" : "Mydataset",
+        "slug" : "Mydataset",
+        "x" : -1120,
+        "y" : -980,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -101,23 +113,25 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "hnL6yRE5uxTb46Qe8d7sj$$3ZEFbr8KtkldEJ5z-rHrm",
+          "id" : "vDWKwShtNcYXP3uJtbBjX$$lAPxZdHj7R1XfnUKjXLR1",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       },
-      "properties" : { }
+      "properties" : {
+        "datasetId" : "datasets/Mydataset"
+      }
     },
-    "BnsR0MeOIQuV_GfkT09NB$$jtQiLlas9vtSV7ILQkwdp" : {
-      "id" : "BnsR0MeOIQuV_GfkT09NB$$jtQiLlas9vtSV7ILQkwdp",
+    "hp4GuMQQvGxBoy2cAIONE$$Dc_WgCSMbwBxQCH1jzeYH" : {
+      "id" : "hp4GuMQQvGxBoy2cAIONE$$Dc_WgCSMbwBxQCH1jzeYH",
       "component" : "Reformat",
       "metadata" : {
-        "label" : "Reformat_1",
-        "slug" : "Reformat_1",
-        "x" : -540,
-        "y" : -420,
+        "label" : "Reformat_2",
+        "slug" : "Reformat_2",
+        "x" : -980,
+        "y" : -980,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -125,11 +139,34 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "iJ8ujIfsr3TfNkBgUI62U$$OQhzsdlQuSbk9uTz4CKKn",
-          "slug" : "in"
+          "id" : "8-4jfoc7_w5Khf8f-iK-n$$hzLh9DaN8CVbEhJrywcDr",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for each record",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The name associated with the record",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "OoEF60WEbno4KI--MI1xA$$IPx4ohO_hZwQLCFyquE6e",
+          "id" : "QswCQl-vOuUHkpE-fpxtG$$bDg0OkOgKzK-YIQ24djCH",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -141,18 +178,18 @@
         "expressions" : [ ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1.dev2&projectSubscriptionProjectId=39&path=gems/Reformat",
-        "projectName" : "ProphecySparkBasicsScala"
+        "gemId" : "gems/Reformat",
+        "projectName" : "Avpreet_Scala"
       }
     },
-    "7tOGD_2quxtv5WzcIln9J$$ZgwFCg08v-8P05GUYbobt" : {
-      "id" : "7tOGD_2quxtv5WzcIln9J$$ZgwFCg08v-8P05GUYbobt",
-      "component" : "Join",
+    "jy3t7qLiLE0oGRcs6iAqK$$SvOcZkgHGnk-4EhWu0Luz" : {
+      "id" : "jy3t7qLiLE0oGRcs6iAqK$$SvOcZkgHGnk-4EhWu0Luz",
+      "component" : "Aggregate",
       "metadata" : {
-        "label" : "Join_1",
-        "slug" : "Join_1",
-        "x" : -400,
-        "y" : -420,
+        "label" : "Aggregate_1",
+        "slug" : "Aggregate_1",
+        "x" : -600,
+        "y" : -1320,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -160,14 +197,34 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "viZpZFYwjr9weo0CmOQkZ$$PS--1MRwUlPp-w41d3a-9",
-          "slug" : "in0"
-        }, {
-          "id" : "fMUe6L1IfSrNUJv7s8Fms$$yLumIGCc7lnzG4cWfHQgr",
-          "slug" : "in1"
+          "id" : "6tLvIWgcrYX2WgpvGLZoN$$drG6TIlW519iMPqIFuUn8",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for each record",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "The name associated with the record",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "0Z0J9uhnuef8xoiQ_dXsT$$Fs0--_83Lj58C9zUFryt7",
+          "id" : "weafXyC0gkAuEmjr7c4_R$$JztQqxTu5eLjHlkikJcvs",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -175,35 +232,45 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "conditions" : [ {
-          "alias" : "in1",
-          "expression" : {
-            "format" : "sql",
-            "expression" : ""
-          },
-          "joinType" : "inner"
-        } ],
-        "expressions" : [ ],
-        "hints" : [ {
-          "id" : "in0",
-          "alias" : "in0",
-          "hintType" : "none",
-          "propagateColumns" : false
-        }, {
-          "id" : "in1",
-          "alias" : "in1",
-          "hintType" : "none",
-          "propagateColumns" : false
-        } ],
-        "activeTab" : "conditions",
+        "allIns" : false,
+        "doPivot" : false,
+        "aggregate" : [ ],
+        "allowSelection" : true,
+        "pivotColumn" : null,
+        "pivotValues" : [ ],
+        "activeTab" : "aggregate",
         "columnsSelector" : [ ],
-        "whereClause" : null,
-        "headAlias" : "in0"
+        "groupBy" : [ ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1.dev2&projectSubscriptionProjectId=39&path=gems/Join",
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1.dev3&projectSubscriptionProjectId=39&path=gems/Aggregate",
         "projectName" : "ProphecySparkBasicsScala"
       }
+    },
+    "uvNK2tSOT4gLgB4VVqwcD$$wV2dKDTN5BakSl4AINBRU" : {
+      "id" : "uvNK2tSOT4gLgB4VVqwcD$$wV2dKDTN5BakSl4AINBRU",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Source_1",
+        "slug" : "Source_1",
+        "x" : -1500,
+        "y" : -1520,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Pz17mBHbMege-S7WTkgXP$$Xkx5wtDjNLoP7uCVj8FVE",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { }
     }
   },
   "ports" : {
@@ -214,7 +281,23 @@
     "autoUpdateOnRun" : false
   },
   "diagnostics" : [ {
-    "property" : "$.workflow.processes.ZQ0PoNsKRlCj0itPHE5l-$$ZlhtgCi0MSZ3wyqyQbQ6M.properties.datasetId",
+    "property" : "$.workflow.processes.jy3t7qLiLE0oGRcs6iAqK$$SvOcZkgHGnk-4EhWu0Luz.properties.aggregate",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "At least one aggregate expression is required in Aggregate.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.uvNK2tSOT4gLgB4VVqwcD$$wV2dKDTN5BakSl4AINBRU.properties.datasetId",
     "range" : {
       "start" : {
         "line" : 0,
@@ -227,70 +310,6 @@
     },
     "severity" : 1,
     "message" : "dataset id missing",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.BnsR0MeOIQuV_GfkT09NB$$jtQiLlas9vtSV7ILQkwdp.ports.inputs[0]",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Please connect input port in",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.7tOGD_2quxtv5WzcIln9J$$ZgwFCg08v-8P05GUYbobt.ports.inputs[0]",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Please connect input port in0",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.7tOGD_2quxtv5WzcIln9J$$ZgwFCg08v-8P05GUYbobt.ports.inputs[1]",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Please connect input port in1",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.7tOGD_2quxtv5WzcIln9J$$ZgwFCg08v-8P05GUYbobt.properties.properties.conditions[0].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Expression cannot be empty. [Conditions]",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]
