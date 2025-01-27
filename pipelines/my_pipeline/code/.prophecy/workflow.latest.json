@@ -89,12 +89,6 @@
     "sourcePort" : "vDWKwShtNcYXP3uJtbBjX$$lAPxZdHj7R1XfnUKjXLR1",
     "target" : "hp4GuMQQvGxBoy2cAIONE$$Dc_WgCSMbwBxQCH1jzeYH",
     "targetPort" : "8-4jfoc7_w5Khf8f-iK-n$$hzLh9DaN8CVbEhJrywcDr"
-  }, {
-    "id" : "-tT8pmoWmdYeW17wYf9vQ",
-    "source" : "IpbdagXRCbE5Fl2hu9Avy$$yLStlG07XT_W1INnQ56Xf",
-    "sourcePort" : "vDWKwShtNcYXP3uJtbBjX$$lAPxZdHj7R1XfnUKjXLR1",
-    "target" : "jy3t7qLiLE0oGRcs6iAqK$$SvOcZkgHGnk-4EhWu0Luz",
-    "targetPort" : "6tLvIWgcrYX2WgpvGLZoN$$drG6TIlW519iMPqIFuUn8"
   } ],
   "processes" : {
     "IpbdagXRCbE5Fl2hu9Avy$$yLStlG07XT_W1INnQ56Xf" : {
@@ -131,7 +125,7 @@
         "label" : "Reformat_2",
         "slug" : "Reformat_2",
         "x" : -980,
-        "y" : -980,
+        "y" : -1340,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -181,96 +175,6 @@
         "gemId" : "gems/Reformat",
         "projectName" : "Avpreet_Scala"
       }
-    },
-    "jy3t7qLiLE0oGRcs6iAqK$$SvOcZkgHGnk-4EhWu0Luz" : {
-      "id" : "jy3t7qLiLE0oGRcs6iAqK$$SvOcZkgHGnk-4EhWu0Luz",
-      "component" : "Aggregate",
-      "metadata" : {
-        "label" : "Aggregate_1",
-        "slug" : "Aggregate_1",
-        "x" : -600,
-        "y" : -1320,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "6tLvIWgcrYX2WgpvGLZoN$$drG6TIlW519iMPqIFuUn8",
-          "slug" : "in",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "id",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Unique identifier for each record",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "name",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "The name associated with the record",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "outputs" : [ {
-          "id" : "weafXyC0gkAuEmjr7c4_R$$JztQqxTu5eLjHlkikJcvs",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "allIns" : false,
-        "doPivot" : false,
-        "aggregate" : [ ],
-        "allowSelection" : true,
-        "pivotColumn" : null,
-        "pivotValues" : [ ],
-        "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
-        "groupBy" : [ ]
-      },
-      "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1.dev3&projectSubscriptionProjectId=39&path=gems/Aggregate",
-        "projectName" : "ProphecySparkBasicsScala"
-      }
-    },
-    "uvNK2tSOT4gLgB4VVqwcD$$wV2dKDTN5BakSl4AINBRU" : {
-      "id" : "uvNK2tSOT4gLgB4VVqwcD$$wV2dKDTN5BakSl4AINBRU",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "Source_1",
-        "slug" : "Source_1",
-        "x" : -1500,
-        "y" : -1520,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "Pz17mBHbMege-S7WTkgXP$$Xkx5wtDjNLoP7uCVj8FVE",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : { }
     }
   },
   "ports" : {
@@ -279,38 +183,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.jy3t7qLiLE0oGRcs6iAqK$$SvOcZkgHGnk-4EhWu0Luz.properties.aggregate",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "At least one aggregate expression is required in Aggregate.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.uvNK2tSOT4gLgB4VVqwcD$$wV2dKDTN5BakSl4AINBRU.properties.datasetId",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "dataset id missing",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }
