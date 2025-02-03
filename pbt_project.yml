@@ -87,10 +87,10 @@ projectDependencies:
     projectUID: 39
     projectName: ProphecySparkBasicsScala
     repositoryPath: gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=
-    version: 0.2.6.1.dev3
+    version: 0.2.6.1
     isDefault: true
     author: null
-    createdAt: '2025-01-24 05:35:35'
+    createdAt: '2025-02-03 05:09:30'
   '40':
     projectUID: 40
     projectName: ProphecyWarehouseScala

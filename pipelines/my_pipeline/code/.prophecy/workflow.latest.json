@@ -37,21 +37,6 @@
       "language" : "scala",
       "code" : "package udfs\n\nimport org.apache.spark.sql.expressions._\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql._\n\n/**\n  * Here you can define your custom aggregate functions.\n  *\n  * Make sure to register your `udafs` in the register_udafs function below.\n  *\n  * Example:\n  *\n  * object GeometricMean extends UserDefinedAggregateFunction {\n  *   // This is the input fields for your aggregate function.\n  *   override def inputSchema: org.apache.spark.sql.types.StructType =\n  *     StructType(StructField(\"value\", DoubleType) :: Nil)\n  *\n  *   // This is the internal fields you keep for computing your aggregate.\n  *   override def bufferSchema: StructType = StructType(\n  *     StructField(\"count\", LongType) ::\n  *     StructField(\"product\", DoubleType) :: Nil\n  *   )\n  *\n  *   // This is the output type of your aggregatation function.\n  *   override def dataType: DataType = DoubleType\n  *\n  *   override def deterministic: Boolean = true\n  *\n  *   // This is the initial value for your buffer schema.\n  *   override def initialize(buffer: MutableAggregationBuffer): Unit = {\n  *     buffer(0) = 0L\n  *     buffer(1) = 1.0\n  *   }\n  *\n  *   // This is how to update your buffer schema given an input.\n  *   override def update(buffer: MutableAggregationBuffer, input: Row): Unit = {\n  *     buffer(0) = buffer.getAs[Long](0) + 1\n  *     buffer(1) = buffer.getAs[Double](1) * input.getAs[Double](0)\n  *   }\n  *\n  *   // This is how to merge two objects with the bufferSchema type.\n  *   override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {\n  *     buffer1(0) = buffer1.getAs[Long](0) + buffer2.getAs[Long](0)\n  *     buffer1(1) = buffer1.getAs[Double](1) * buffer2.getAs[Double](1)\n  *   }\n  *\n  *   // This is where you output the final value, given the final value of your bufferSchema.\n  *   override def evaluate(buffer: Row): Any = {\n  *     math.pow(buffer.getDouble(1), 1.toDouble / buffer.getLong(0))\n  *   }\n  * }\n  *\n  */\n\n\nobject UDAFs {\n  /**\n    * Registers UDAFs with Spark SQL\n    */\n  def registerUDAFs(spark: SparkSession): Unit = {\n    /**\n      * Example:\n      *\n      * spark.udf.register(\"gm\", GeometricMean)\n      *\n      */\n\n\n  }\n}\n"
     },
-    "configuration" : {
-      "common" : {
-        "type" : "record",
-        "fields" : [ ]
-      },
-      "oldCommon" : {
-        "type" : "record",
-        "fields" : [ ]
-      },
-      "fabrics" : { },
-      "instances" : { },
-      "selected" : "default",
-      "nonEditable" : [ ],
-      "isSubscribedPipelineWithPipelineConfigs" : false
-    },
     "sparkConf" : [ {
       "name" : "spark.default.parallelism",
       "value" : "4"
@@ -103,44 +88,6 @@
     "targetPort" : "RBSWS6uTW8c1mxMfT-h6K$$yv23qHfwU-RpDrM7X00pr"
   } ],
   "processes" : {
-    "5vgdQ4fC24MOUPkTEsDJG$$JgnJYvpVR_-Y5wFCwKZH8" : {
-      "id" : "5vgdQ4fC24MOUPkTEsDJG$$JgnJYvpVR_-Y5wFCwKZH8",
-      "component" : "Deduplicate",
-      "metadata" : {
-        "label" : "Deduplicate_2",
-        "slug" : "Deduplicate_2",
-        "x" : -380,
-        "y" : -1680,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "bRwBcbkfWa33rObFU87QH$$3JIE4eGiir_GT0Zs8PtmY",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "e_ll8HRrHbCFCFEspYD1Z$$_Vwfgt9izHIm6TL-ht1tJ",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "dedupColumns" : [ ],
-        "dedupType" : "any",
-        "columnsSelector" : [ ],
-        "orders" : [ ],
-        "useOrderBy" : false
-      },
-      "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1.dev3&projectSubscriptionProjectId=39&path=gems/Deduplicate",
-        "projectName" : "ProphecySparkBasicsScala"
-      }
-    },
     "IpbdagXRCbE5Fl2hu9Avy$$yLStlG07XT_W1INnQ56Xf" : {
       "id" : "IpbdagXRCbE5Fl2hu9Avy$$yLStlG07XT_W1INnQ56Xf",
       "component" : "Source",
@@ -166,77 +113,6 @@
       },
       "properties" : {
         "datasetId" : "datasets/Mydataset"
-      }
-    },
-    "zDKYKWHMuAvNjbGwAWlcq$$MvuK8WfKKfcHNoAOQ005F" : {
-      "id" : "zDKYKWHMuAvNjbGwAWlcq$$MvuK8WfKKfcHNoAOQ005F",
-      "component" : "SampleRows",
-      "metadata" : {
-        "label" : "SampleRows_1",
-        "slug" : "SampleRows_1",
-        "x" : -760,
-        "y" : -1660,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "rSye5bWdDmJKjEoQl_7h8$$khPrM9vkmR8A-IMzrU5Za",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "rSye5bWdDmJKjEoQl_7h8$$khPrM9vkmR8A-IMzrU5Za",
-          "slug" : "in"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : true,
-        "autoUpdateOnRun" : true
-      },
-      "properties" : {
-        "samplingRatio" : "0.5",
-        "withReplacement" : false,
-        "samplingStrategy" : "percR"
-      },
-      "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1.dev3&projectSubscriptionProjectId=39&path=gems/SampleRows",
-        "projectName" : "ProphecySparkBasicsScala"
-      }
-    },
-    "6mGyxje1oh3fQvRrET7-Q$$zTiRGOm3NPpaKmS4p_gj7" : {
-      "id" : "6mGyxje1oh3fQvRrET7-Q$$zTiRGOm3NPpaKmS4p_gj7",
-      "component" : "Reformat",
-      "metadata" : {
-        "label" : "Reformat_1",
-        "slug" : "Reformat_1",
-        "x" : -400,
-        "y" : -1420,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "5DtDlQDL17dbWB9bRlxC8$$HMnOjcqDbXmoWWgrBt13M",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "WnqYIILqe70f9OpE2I0qY$$phW6XVofhy4z46iZ9r_nY",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "columnsSelector" : [ ],
-        "expressions" : [ ]
-      },
-      "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1.dev3&projectSubscriptionProjectId=39&path=gems/Reformat",
-        "projectName" : "ProphecySparkBasicsScala"
       }
     },
     "aCT2lutBlgx2G8JXhnHsQ$$xjT0K6KaADJvFkFNVT0p2" : {
@@ -320,7 +196,7 @@
         "samplingStrategy" : "percR"
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1.dev3&projectSubscriptionProjectId=39&path=gems/SampleRows",
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1&projectSubscriptionProjectId=39&path=gems/SampleRows",
         "projectName" : "ProphecySparkBasicsScala"
       }
     },
@@ -385,7 +261,7 @@
         "useOrderBy" : false
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1.dev3&projectSubscriptionProjectId=39&path=gems/Deduplicate",
+        "gemId" : "gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_39.git&subPath=&tag=0.2.6.1&projectSubscriptionProjectId=39&path=gems/Deduplicate",
         "projectName" : "ProphecySparkBasicsScala"
       }
     },
@@ -454,70 +330,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.5vgdQ4fC24MOUPkTEsDJG$$JgnJYvpVR_-Y5wFCwKZH8.ports.inputs[0]",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Please connect input port in",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.5vgdQ4fC24MOUPkTEsDJG$$JgnJYvpVR_-Y5wFCwKZH8.properties.dedupColumns",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "At least one rule has to be specified",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.zDKYKWHMuAvNjbGwAWlcq$$MvuK8WfKKfcHNoAOQ005F.ports.inputs[0]",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Please connect input port in",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.6mGyxje1oh3fQvRrET7-Q$$zTiRGOm3NPpaKmS4p_gj7.ports.inputs[0]",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Please connect input port in",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }
