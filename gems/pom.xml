@@ -3,7 +3,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <modelVersion>4.0.0</modelVersion>
     <groupId>abhishekse2etestsprophecyioteam</groupId>
     <artifactId>avpreetscalaproject</artifactId>
-    <version>Avpreet_Scala_1.2</version>
+    <version>Avpreet_Scala_1.3</version>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -157,7 +157,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                     <archive>
                         <addMavenDescriptor>false</addMavenDescriptor>
                         <manifestEntries>
-                            <Plugin-Id>Avpreet_Scala_1.2</Plugin-Id>
+                            <Plugin-Id>Avpreet_Scala_1.3</Plugin-Id>
                             <Plugin-Provider>Decebal Suiu</Plugin-Provider>
                             <Plugin-Version>0.0.1</Plugin-Version>
                         </manifestEntries>
